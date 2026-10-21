@@ -22,17 +22,17 @@ void show(unsigned char leds)
 int main(void)
 {
     unsigned char leds = 0;
-    leds = leds | (1 << 0); /* 0番目を点ける */
+    leds = leds | (1 << 0);
     show(leds);
-    leds = leds | (1 << 2); /* 2番目を点ける */
+    leds = leds | (1 << 2);
     show(leds);
-    leds = leds | (1 << 7); /* 7番目を点ける */
+    leds = leds | (1 << 7);
     show(leds);
-    leds = leds & ~(1 << 0); /* 0番目を消す */
+    leds = leds & ~(1 << 0);
     show(leds);
-    leds = leds ^ (1 << 1); /* 1番目を反転する */
+    leds = leds ^ (1 << 1);
     show(leds);
-    leds = leds ^ (1 << 1); /* もう一度反転して元に戻す */
+    leds = leds ^ (1 << 1);
     show(leds);
     return 0;
 }
