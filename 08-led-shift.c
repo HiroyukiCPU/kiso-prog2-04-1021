@@ -10,20 +10,29 @@
 // ==================================================
 #include <stdio.h>
 
-void show(unsigned char leds){
-    for (int i = 7; i >= 0; i--) {
+void show(unsigned char leds)
+{
+    for (int i = 7; i >= 0; i--)
+    {
         printf("%s", (leds & (1 << i)) ? "●" : "○");
     }
     printf("\n");
 }
 
-int main(void){
+int main(void)
+{
     unsigned char leds = 0;
     leds = leds | (1 << 0); /* 0番目を点ける */
     show(leds);
     leds = leds | (1 << 2); /* 2番目を点ける */
     show(leds);
+    leds = leds | (1 << 7); /* 7番目を点ける */
+    show(leds);
     leds = leds & ~(1 << 0); /* 0番目を消す */
+    show(leds);
+    leds = leds ^ (1 << 1); /* 1番目を反転する */
+    show(leds);
+    leds = leds ^ (1 << 1); /* もう一度反転して元に戻す */
     show(leds);
     return 0;
 }
